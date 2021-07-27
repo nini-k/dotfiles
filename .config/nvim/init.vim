@@ -4,6 +4,11 @@ runtime! config.d/*.vim
 " Automatic reloading of config
 autocmd! bufwritepost ~/.config/nvim/init.vim source %
 
+" Colorscheme
+set t_Co=256
+set background=light
+colorscheme PaperColor
+
 " Mouse and backspace
 set mouse=a
 set bs=2
@@ -37,12 +42,6 @@ vnoremap <Leader>s :sort<CR>
 " then press ``>`` several times.
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
-
-" Color scheme
-" set t_Co=256
-colorscheme github
-set background=light
-let g:airline_theme = "github"
 
 " Showing line numbers and length2
 set number  " show line numbers

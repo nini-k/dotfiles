@@ -7,7 +7,7 @@ call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     
     " colorsheme and display features
-    Plugin 'cormacrelf/vim-colors-github'
+    Plugin 'NLKNguyen/papercolor-theme'
     Plugin 'Yggdroot/indentLine'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
