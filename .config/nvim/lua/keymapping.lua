@@ -26,7 +26,7 @@ map('i', '<C-H>', '<C-W><C-H>', opts)  --
 
 map('n', '<leader>c', ':nohl<cr>', opts) -- bind nohl
 map('v', '<leader>c', ':nohl<cr>', opts) -- removes highlight of your last search
-map('i', '<leader>c', ':nohl<cr>', opts)
+map('i', '<leader>c', ':nohl<cr>', opts) --
 
 map('v', '<leader>s', ':sort<cr>', opts) -- map sort function to a key
 
