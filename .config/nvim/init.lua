@@ -16,6 +16,14 @@ require 'paq'{
 
     'neovim/nvim-lspconfig';
     'hoob3rt/lualine.nvim';
+    'airblade/vim-gitgutter'; 
+    'nvim-treesitter/nvim-treesitter';
+    'nvim-lua/completion-nvim';
+
+    'nvim-telescope/telescope.nvim';
+    'nvim-lua/plenary.nvim';
+    -- 'kyazdani42/nvim-web-devicons'; -- icons
+    -- 'ryanoasis/vim-devicons';       --  ryanoasis/nerd-fonts is required 
 
     --'NLKNguyen/papercolor-theme'
     --'Yggdroot/indentLine'

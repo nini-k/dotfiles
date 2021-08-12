@@ -42,3 +42,8 @@ map('', '<up>', '<nop>', opts)    -- don't use arrow keys
 map('', '<down>', '<nop>', opts)  --
 map('', '<left>', '<nop>', opts)  --
 map('', '<right>', '<nop>', opts) --
+
+map('', ':f', '<cmd>Telescope find_files<cr>', opts) -- Telescope
+map('', ';r', '<cmd>Telescope live_grep<cr>', opts)  --
+map('', '\\\\', '<cmd>Telescope buffers<cr>', opts)  --
+map('', ';;', '<cmd>Telescope help_tags<cr>', opts)  --
