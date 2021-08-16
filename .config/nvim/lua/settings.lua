@@ -16,6 +16,9 @@ local o    = vim.o         	   -- global options
 local b    = vim.bo        	   -- buffer-scoped options
 local w    = vim.wo        	   -- windows-scoped options
 
+o.termguicolors = true       -- enable 24-bit RGB colors
+cmd([[colorscheme molokai]]) -- set colorscheme
+
 o.mouse     = 'a'           -- enable mouse support
 o.bs        = '2'           -- enable mouse support
 o.clipboard = 'unnamedplus' -- copy/paste to system clipboard
