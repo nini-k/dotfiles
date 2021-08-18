@@ -15,8 +15,9 @@ local opts = {noremap = true, silent = true} -- keymap options
 
 g.mapleader = ',' -- rebind <Leader> key
 
-map('n', '<leader>e', ':quit<cr>', opts) -- quick quit command
-map('n', '<leader>E', ':qa!<cr>', opts)  -- 
+map('n', '<leader>e', ':wq<cr>', opts)    -- quick quit command
+map('n', '<leader>E', ':qa!<cr>', opts)   -- 
+map('n', '<leader>WE', ':wqa<cr>', opts)  -- 
 
 map('n', '<C-J>', '<C-W><C-J>', opts)  -- bind easier split navigations
 map('n', '<C-K>', '<C-W><C-K>', opts)  -- instead of ctrl-w then k, it’s just ctrl-k
