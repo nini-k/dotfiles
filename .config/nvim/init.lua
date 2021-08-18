@@ -35,6 +35,7 @@ require 'paq'{
     'airblade/vim-gitgutter';
     'tpope/vim-fugitive';
     'sindrets/diffview.nvim';
+    'kdheepak/lazygit.nvim';
 
     --'NLKNguyen/papercolor-theme'
     --'Yggdroot/indentLine'
