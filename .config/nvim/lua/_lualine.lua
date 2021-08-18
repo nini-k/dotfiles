@@ -16,7 +16,8 @@ require("lualine").setup {
     options = {
         theme = "molokai",
         icons_enabled = true
-    },
+    };
+
     sections = {
         lualine_a = {"mode"},
         lualine_b = {"branch"},
@@ -28,7 +29,8 @@ require("lualine").setup {
         },
         lualine_y = {"progress"},
         lualine_z = {"location"}
-    },
-    extensions = {"fugitive"}
+    };
+
+    extensions = {"fugitive"};
 }
 
