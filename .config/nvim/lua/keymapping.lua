@@ -42,14 +42,21 @@ map('', '<down>', '<nop>', opts)  --
 map('', '<left>', '<nop>', opts)  --
 map('', '<right>', '<nop>', opts) --
 
-map('', '<leader>f', '<cmd>Telescope find_files<cr>', opts) -- Telescope
+-- telescope
+map('', '<leader>f', '<cmd>Telescope find_files<cr>', opts) -- 
 map('', ';;', '<cmd>Telescope help_tags<cr>', opts)  	    --
 map('', '\\\\', '<cmd>Telescope buffers<cr>', opts)  	    --
 map('', ';r', '<cmd>Telescope live_grep<cr>', opts)  	    --
 
-map('n', '<leader>t', ':NvimTreeToggle<CR>', opts) -- nvim-tree toggle
+-- nvim-tree
+map('n', '<leader>t', ':NvimTreeToggle<CR>', opts) -- toggle
 
-map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})     -- autocompetion tab navigations 
+-- autocompetion tab navigations
+map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})     -- function impl in _nvim-compee.lua
 map("s", "<Tab>", "v:lua.tab_complete()", {expr = true})     --
 map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true}) --
 map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true}) --
+
+-- vim-fugitive 
+map("n", "<leader>gc", "<cmd>Git add % | Git commit<cr>", opts) -- commit current file
+map("n", "<leader>gr", "<cmd>Git checkout HEAD -- %<cr>", opts) -- rollback current chachges
