@@ -19,10 +19,25 @@ map('n', '<leader>e', ':wq<cr>', opts)    -- quick quit command
 map('n', '<leader>E', ':qa!<cr>', opts)   -- 
 map('n', '<leader>WE', ':wqa<cr>', opts)  -- 
 
-map('n', '<C-J>', '<C-W><C-J>', opts)  -- bind easier split navigations
-map('n', '<C-K>', '<C-W><C-K>', opts)  -- instead of ctrl-w then k, it’s just ctrl-k
-map('n', '<C-L>', '<C-W><C-L>', opts)  -- 
-map('n', '<C-H>', '<C-W><C-H>', opts)  -- 
+-- split nav
+map('n', '<C-J>', '<C-W><C-J>', opts) -- bind easier split navigations
+map('n', '<C-K>', '<C-W><C-K>', opts) -- instead of ctrl-w then k, it’s just ctrl-k
+map('n', '<C-L>', '<C-W><C-L>', opts) -- 
+map('n', '<C-H>', '<C-W><C-H>', opts) -- 
+
+-- tab nav
+map("n", "<leader>1", "1gt", opts)                 -- tab swithing
+map("n", "<leader>2", "2gt", opts)                 --
+map("n", "<leader>3", "3gt", opts)                 --
+map("n", "<leader>4", "4gt", opts)                 --
+map("n", "<leader>5", "5gt", opts)                 --
+map("n", "<leader>6", "6gt", opts)                 --
+map("n", "<leader>7", "7gt", opts)                 --
+map("n", "<leader>8", "8gt", opts)                 --
+map("n", "<leader>9", "9gt", opts)                 --
+map("n", "<leader>0", "<cmd>tablast<cr>", opts)    -- 
+-- map("n","<C-1>", "<cmd>tabnext<cr", opts)       --
+-- map("n","<C-2>", "<cmd>tabprevious<cr>", opts)  --
 
 map('n', '<leader>c', ':nohl<cr>', opts) -- bind nohl
 map('v', '<leader>c', ':nohl<cr>', opts) -- removes highlight of your last search
