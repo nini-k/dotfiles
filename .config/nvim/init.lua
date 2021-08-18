@@ -33,6 +33,8 @@ require 'paq'{
 
     -- git
     'airblade/vim-gitgutter';
+    'tpope/vim-fugitive';
+    'sindrets/diffview.nvim';
 
     --'NLKNguyen/papercolor-theme'
     --'Yggdroot/indentLine'
