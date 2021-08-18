@@ -13,7 +13,7 @@
 local cmd      = vim.cmd          -- execute Vim commands
 local protocol = vim.lsp.protocol -- 
 
-local nvim_lsp = require('lspconfig')
+local nvim_lsp = require("lspconfig")
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -22,12 +22,12 @@ local on_attach = function(client, bufnr)
     local opts = { noremap=true, silent=true } -- noremap mappings opts
     
     -- see `:help vim.lsp.*` for documentation on any of the below functions
-    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    buf_set_keymap("n", "<leader>H", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 
     -- some configurations
-    -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     -- buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     -- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     -- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
@@ -44,37 +44,37 @@ local on_attach = function(client, bufnr)
     
     -- formatting
     cmd [[autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)]]
-    cmd [[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)]]
     cmd [[autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)]] 
+    cmd [[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)]]
 
     -- compltion icons
     protocol.CompletionItemKind = {
-    '', -- text
-    '', -- method
-    '', -- function
-    '', -- constructor
-    '', -- field
-    '', -- variable
-    '', -- class
-    'ﰮ', -- interface
-    '', -- module
-    '', -- property
-    '', -- unit
-    '', -- value
-    '', -- enum
-    '', -- keyword
-    '﬌', -- snippet
-    '', -- color
-    '', -- file
-    '', -- reference
-    '', -- folder
-    '', -- enumMember
-    '', -- constant
-    '', -- struct
-    '', -- event
-    'ﬦ', -- operator
-    '', -- typeParameter
-  }
+        "", -- text
+        "", -- method
+        "", -- function
+        "", -- constructor
+        "", -- field
+        "", -- variable
+        "", -- class
+        "ﰮ", -- interface
+        "", -- module
+        "", -- property
+        "", -- unit
+        "", -- value
+        "", -- enum
+        "", -- keyword
+        "﬌", -- snippet
+        "", -- color
+        "", -- file
+        "", -- reference
+        "", -- folder
+        "", -- enumMember
+        "", -- constant
+        "", -- struct
+        "", -- event
+        "ﬦ", -- operator
+        "", -- typeParameter
+    }
 
 end
 
