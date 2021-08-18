@@ -34,7 +34,6 @@ require 'paq'{
     -- git
     'airblade/vim-gitgutter';
     'tpope/vim-fugitive';
-    'sindrets/diffview.nvim';
     'kdheepak/lazygit.nvim';
 
     --'NLKNguyen/papercolor-theme'
