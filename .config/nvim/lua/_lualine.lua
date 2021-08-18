@@ -11,11 +11,24 @@
 -- keybindings are defined in `keymapping.lua`
 -- repo: https://github.com/hoob3rt/lualine.nvim
 
-require('lualine').setup {
+require("lualine").setup {
     -- TODO: settings
     options = {
-        theme = 'molokai',
+        theme = "molokai",
         icons_enabled = true
-    };
+    },
+    sections = {
+        lualine_a = {"mode"},
+        lualine_b = {"branch"},
+        lualine_c = {"filename"},
+        lualine_x = {
+            {"diagnostics", sources = {"nvim_lsp"}, symbols = {error = " ", warn = " ", info = " ", hint = " "} },
+            "encoding",
+            "filetype"
+        },
+        lualine_y = {"progress"},
+        lualine_z = {"location"}
+    },
+    extensions = {"fugitive"}
 }
 
