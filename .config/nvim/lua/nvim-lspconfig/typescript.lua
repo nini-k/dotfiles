@@ -15,6 +15,13 @@ local protocol = vim.lsp.protocol --
 
 local nvim_lsp = require("lspconfig")
 
+-- require("lsp-colors").setup({
+--   Error = "#db4b4b",
+--   Warning = "#e0af68",
+--   Information = "#0db9d7",
+--   Hint = "#10B981"
+-- })
+
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end	
@@ -83,8 +90,18 @@ nvim_lsp.tsserver.setup {
     filetypes = { "javascript","typescript" }
 }
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    underline = true,
+    -- This sets the spacing and the prefix, obviously.
+    virtual_text = {
+      spacing = 4,
+      prefix = ''
+    }
+})
+
 nvim_lsp.diagnosticls.setup {
     on_attach = on_attach,
+
     filetypes = { "javascript", "json", "typescript", "css", "markdown" },
 
     init_options = {

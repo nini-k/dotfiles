@@ -14,7 +14,7 @@
 require("lualine").setup {
     -- TODO: settings
     options = {
-        theme = "molokai",
+        theme         = "molokai",
         icons_enabled = true
     };
 
