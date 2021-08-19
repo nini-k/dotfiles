@@ -7,48 +7,48 @@
 --]]    
 
 -------------------- PLUGINS -------------------------------
-vim.cmd 'packadd paq-nvim'           -- load the package manager
-local paq = require('paq-nvim').paq  -- a convenient alias
+vim.cmd "packadd paq-nvim"           -- load the package manager
+local paq = require("paq-nvim").paq  -- a convenient alias
 
-require 'paq'{ 
-    'savq/paq-nvim';  -- let paq manage itself
+require "paq"{ 
+    "savq/paq-nvim";  -- let paq manage itself
 
-    'neovim/nvim-lspconfig';
+    "neovim/nvim-lspconfig";
     
     -- syntax
-    'hrsh7th/nvim-compe'; -- autocomplete
-    'hrsh7th/vim-vsnip';  -- dependency
+    "hrsh7th/nvim-compe"; -- autocomplete
+    "hrsh7th/vim-vsnip";  -- dependency
 
     -- statusline
-    'hoob3rt/lualine.nvim';
+    "hoob3rt/lualine.nvim";
     
     -- navigation 
-    'kyazdani42/nvim-tree.lua';      -- files
-    'nvim-telescope/telescope.nvim'; -- fuzzy finder
-    'nvim-lua/plenary.nvim';         -- dependency
+    "kyazdani42/nvim-tree.lua";      -- files
+    "nvim-telescope/telescope.nvim"; -- fuzzy finder
+    "nvim-lua/plenary.nvim";         -- dependency
 
     -- icons
-    'kyazdani42/nvim-web-devicons';
-    'yanoasis/vim-devicons';
+    "kyazdani42/nvim-web-devicons";
+    "yanoasis/vim-devicons";
 
     -- git
-    'airblade/vim-gitgutter';
-    'tpope/vim-fugitive';
-    'kdheepak/lazygit.nvim';
+    "airblade/vim-gitgutter";
+    "tpope/vim-fugitive";
+    "kdheepak/lazygit.nvim";
 
-    --'NLKNguyen/papercolor-theme'
-    --'Yggdroot/indentLine'
-    --'preservim/nerdtree';
+    --"NLKNguyen/papercolor-theme"
+    --"Yggdroot/indentLine"
+    --"preservim/nerdtree";
 }
 
 -------------------- MODULES -------------------------------
-require('keymapping') -- keymapping
-require('settings')   -- settings 
+require("keymapping") -- keymapping
+require("settings")   -- settings 
 
 -- plugins 
-require('nvim-lspconfig/typescript')  -- typesctipt lsp settings 
-require('_lualine')                   -- lualine settings
-require('_telescope')                 -- telescope settings
-require('_nvim-tree')                 -- nvim-tree settings
-require('_nvim-compe')                -- nvim-compe settings
+require("plugins/_lualine")                   -- lualine settings
+require("plugins/_telescope")                 -- telescope settings
+require("plugins/_nvim-tree")                 -- nvim-tree settings
+require("plugins/_nvim-compe")                -- nvim-compe settings
+require("nvim-lspconfig/typescript")          -- typesctipt lsp settings 
 

@@ -85,6 +85,11 @@ local on_attach = function(client, bufnr)
 
 end
 
+nvim_lsp.vuels.setup {
+    on_attach = on_attach,
+    filetypes = {"vue"}
+}
+
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
     filetypes = { "javascript","typescript" }
@@ -95,20 +100,20 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
     -- This sets the spacing and the prefix, obviously.
     virtual_text = {
       spacing = 4,
-      prefix = ''
+      prefix = '<'
     }
 })
 
 nvim_lsp.diagnosticls.setup {
     on_attach = on_attach,
 
-    filetypes = { "javascript", "json", "typescript", "css", "markdown" },
+    filetypes = { "javascript", "vue", "json", "typescript", "css", "markdown" },
 
     init_options = {
         linters = {
             eslint = {
                 command      = "eslint_d",
-                rootPatterns = { ".git" },
+                rootPatterns = { ".eslintrc.js" },
                 debounce     = 100,
                 args         = { "--stdin", "--stdin-filename", "%filepath", "--format", "json" },
                 sourceName   = "eslint_d",
@@ -129,6 +134,7 @@ nvim_lsp.diagnosticls.setup {
         filetypes = {
             javascript = "eslint",
             typescript = "eslint",
+            vue = "eslint"
         },
 
         formatters = {
@@ -149,6 +155,7 @@ nvim_lsp.diagnosticls.setup {
             json       = "prettier",
             less       = "prettier",
             typescript = "eslint_d",
+            vue        = "eslint_d",
             json       = "prettier",
             markdown   = "prettier",
         }
