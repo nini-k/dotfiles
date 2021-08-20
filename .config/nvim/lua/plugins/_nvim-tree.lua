@@ -13,24 +13,23 @@
 
 local g = vim.g -- global variables
 
-g.nvim_tree_side                = 'right'
+g.nvim_tree_side                = "right"
 g.nvim_tree_icons               = {default = "‣ "}
 g.nvim_tree_git_hl              = 1
-g.nvim_tree_ignore              = {'.git', 'node_modules', '.cache'}
+g.nvim_tree_ignore              = {".git", "node_modules", ".cache"}
 g.nvim_tree_tab_open            = 1 
 g.nvim_tree_auto_open           = 1
 g.nvim_tree_show_icons          = {git = 1, folders = 1, files = 1}
-g.nvim_tree_special_files       = {'README.md', 'Makefile', 'MAKEFILE'}
+g.nvim_tree_special_files       = {"README.md", "Makefile", "MAKEFILE"}
 g.nvim_tree_hide_dotfiles       = 1
 g.nvim_tree_indent_markers      = 1
 g.nvim_tree_width_allow_resize  = 1
 
-local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+local tree_cb = require("nvim-tree.config").nvim_tree_callback
 g.nvim_tree_bindings = {
     { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },                 -- default
     { key = "x",                            cb = tree_cb("cut") },                -- default  
     { key = "c",                            cb = tree_cb("copy") },               -- default 
-    { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },               -- default 
     { key = "q",                            cb = tree_cb("close") },              -- default 
     { key = "p",                            cb = tree_cb("paste") },              -- default 
     { key = "<C-o>",                        cb = tree_cb("split") },              -- default <C-x>
@@ -58,5 +57,6 @@ g.nvim_tree_bindings = {
     { key = "K",                            cb = tree_cb("first_sibling") },      -- default 
     { key = "I",                            cb = tree_cb("toggle_ignored") },     -- default 
     { key = "H",                            cb = tree_cb("toggle_dotfiles") },    -- default 
+    { key = {"<space>", "<cr>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },    -- default <space> <cr> o <2-LeftMouse>
     { key = "gy",                           cb = tree_cb("copy_absolute_path") }, -- default 
 }
