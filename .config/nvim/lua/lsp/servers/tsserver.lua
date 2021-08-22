@@ -5,6 +5,7 @@
     /_/ /___/___/___/_/|_||___/___/_/|_(_)____/\____/_/ |_|
                                                   
     repo:         https://github.com/typescript-language-server/typescript-language-server  
+    example:      https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver
     installation: npm install -g typescript-language-server
 
     this file can be loaded by calling `require("module_name")` from init.lua
