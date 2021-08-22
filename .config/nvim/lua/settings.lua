@@ -1,12 +1,12 @@
 --[[
-   _________________________  ___________  __   __  _____ 
-  / __/ __/_  __/_  __/  _/ |/ / ___/ __/ / /  / / / / _ |
- _\ \/ _/  / /   / / _/ //    / (_ /\ \_ / /__/ /_/ / __ |
-/___/___/ /_/   /_/ /___/_/|_/\___/___(_)____/\____/_/ |_|
-                                                          
+       _________________________  ___________  __   __  _____ 
+      / __/ __/_  __/_  __/  _/ |/ / ___/ __/ / /  / / / / _ |
+     _\ \/ _/  / /   / / _/ //    / (_ /\ \_ / /__/ /_/ / __ |
+    /___/___/ /_/   /_/ /___/_/|_/\___/___(_)____/\____/_/ |_|
+                                                              
+    this file can be loaded by calling `require("module_name")` from your init.lua
 --]]
 
--- This file can be loaded by calling `require('module_name')` from your init.lua
 
 local g    = vim.g         	   -- global variables
 local o    = vim.o         	   -- global options
