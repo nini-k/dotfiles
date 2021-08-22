@@ -5,6 +5,7 @@
     /___/_/ /_/  /_(_)____/\____/_/ |_|
                                        
     repo:         https://github.com/mattn/efm-langserver 
+    example:      https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#efm
     installation: go get github.com/mattn/efm-langserver && ln -s $GOPATH/bin/efm-langserver /usr/local/bin/efm-langserver
 
     this file can be loaded by calling `require("module_name")` from init.lua
