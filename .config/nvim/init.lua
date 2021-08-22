@@ -1,9 +1,9 @@
 --[[
-   _____  ____________  __   __  _____ 
-  /  _/ |/ /  _/_  __/ / /  / / / / _ |
- _/ //    // /  / / _ / /__/ /_/ / __ |
-/___/_/|_/___/ /_/ (_)____/\____/_/ |_|
-                                       
+       _____  ____________  __   __  _____ 
+      /  _/ |/ /  _/_  __/ / /  / / / / _ |
+     _/ //    // /  / / _ / /__/ /_/ / __ |
+    /___/_/|_/___/ /_/ (_)____/\____/_/ |_|
+                                           
 --]]    
 
 -------------------- PLUGINS -------------------------------
@@ -12,9 +12,11 @@ local paq = require("paq-nvim").paq  -- a convenient alias
 
 require "paq"{ 
     "savq/paq-nvim";  -- let paq manage itself
-
-    "neovim/nvim-lspconfig";
     
+    -- lsp
+    "neovim/nvim-lspconfig";
+    "nvim-lua/lsp-status.nvim"; 
+
     -- syntax
     "hrsh7th/nvim-compe"; -- autocomplete
     "hrsh7th/vim-vsnip";  -- dependency
@@ -46,9 +48,9 @@ require("keymapping") -- keymapping
 require("settings")   -- settings 
 
 -- plugins 
-require("plugins/_lualine")                   -- lualine settings
-require("plugins/_telescope")                 -- telescope settings
-require("plugins/_nvim-tree")                 -- nvim-tree settings
-require("plugins/_nvim-compe")                -- nvim-compe settings
-require("nvim-lspconfig/typescript")          -- typesctipt lsp settings 
+require("plugins/_lualine")    -- lualine settings
+require("plugins/_telescope")  -- telescope settings
+require("plugins/_nvim-tree")  -- nvim-tree settings
+require("plugins/_nvim-compe") -- nvim-compe settings
+require("lsp")                 -- lsp settings 
 
