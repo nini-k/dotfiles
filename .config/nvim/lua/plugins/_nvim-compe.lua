@@ -1,15 +1,15 @@
 --[[
-   _  ___   ________  ___    _________  __  ______  ____  __   __  _____ 
-  / |/ / | / /  _/  |/  /___/ ___/ __ \/  |/  / _ \/ __/ / /  / / / / _ |
- /    /| |/ // // /|_/ /___/ /__/ /_/ / /|_/ / ___/ _/_ / /__/ /_/ / __ |
-/_/|_/ |___/___/_/  /_/    \___/\____/_/  /_/_/  /___(_)____/\____/_/ |_|
-                                                                         
+       _  ___   ________  ___    _________  __  ______  ____  __   __  _____ 
+      / |/ / | / /  _/  |/  /___/ ___/ __ \/  |/  / _ \/ __/ / /  / / / / _ |
+     /    /| |/ // // /|_/ /___/ /__/ /_/ / /|_/ / ___/ _/_ / /__/ /_/ / __ |
+    /_/|_/ |___/___/_/  /_/    \___/\____/_/  /_/_/  /___(_)____/\____/_/ |_|
+                                                                             
+    repo: https://github.com/hrsh7th/nvim-compe 
+
+    keybindings are defined in `keymapping.lua`
+
+    this file can be loaded by calling `require("module_name")` from your init.lua
 --]]
-
--- This file can be loaded by calling `require('module_name')` from your init.lua
-
--- keybindings are defined in `keymapping.lua`
--- repo: https://github.com/hrsh7th/nvim-compe 
 
 local o = vim.o -- global options
 
@@ -56,8 +56,8 @@ local t = function(str)
 end
 
 local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    local col = vim.fn.col(".") - 1
+    if col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
         return true
     else
         return false
@@ -75,7 +75,7 @@ _G.tab_complete = function()
   elseif check_back_space() then
     return t "<Tab>"
   else
-    return vim.fn['compe#complete']()
+    return vim.fn["compe#complete"]()
   end
 end
 
