@@ -12,7 +12,7 @@ local lsp_status  = require("lsp-status")
 local keymapping  = require("lsp.keymapping")
 
 -- for debugging lsp
-vim.lsp.set_log_level("warn") -- levels by name: "trace", "debug", "info", "warn", "error"
+vim.lsp.set_log_level("debug") -- levels by name: "trace", "debug", "info", "warn", "error"
 
 local function on_attach(client, bufnr)
     print(client.name)
@@ -40,16 +40,16 @@ local language_server_path = "/usr/local/bin" -- vim.fn.stdpath("cache") .. "/ls
 
 local servers = {
     efm      = require("lsp.servers.efm")(language_server_path),
+    html     = require("lsp.servers.html")(language_server_path),
+    vuels    = require("lsp.servers.vuels")(language_server_path, on_attach),
+    bashls   = require("lsp.servers.bashls")(language_server_path),
+    yamlls   = require("lsp.servers.yamlls")(language_server_path),
+    dockerls = require("lsp.servers.dockerls")(language_server_path),
     tsserver = require("lsp.servers.tsserver")(language_server_path, on_attach),
 
-    -- yamlls = require("lsp.servers.yamlls")(language_server_path),
-    -- bashls = require("lsp.servers.bashls")(language_server_path),
     -- jsonls = require("lsp.servers.jsonls")(language_server_path),
-    -- html = require("lsp.servers.htmlls")(language_server_path),
     -- cssls = require("lsp.servers.cssls")(language_server_path),
     -- sumneko_lua = require("lsp.servers.sumneko_lua")(language_server_path),
-    -- dockerls = require("lsp.servers.dockerls")(language_server_path),
-    -- vuels = require("lsp.servers.vuels")(language_server_path, on_attach),
 }
 
 -- init servers
