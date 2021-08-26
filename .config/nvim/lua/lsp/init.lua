@@ -12,7 +12,7 @@ local lsp_status  = require("lsp-status")
 local keymapping  = require("lsp.keymapping")
 
 -- for debugging lsp
-vim.lsp.set_log_level("debug") -- levels by name: "trace", "debug", "info", "warn", "error"
+vim.lsp.set_log_level("warn") -- levels by name: "trace", "debug", "info", "warn", "error"
 
 local function on_attach(client, bufnr)
     print(client.name)
