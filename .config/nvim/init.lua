@@ -48,6 +48,9 @@ require "paq"{
 require("keymapping") -- keymapping
 require("settings")   -- settings 
 
+-- global foo
+require("global/_nvim-compe")  --
+
 -- plugins 
 require("plugins/_lualine")    -- lualine settings
 require("plugins/_lspsaga")    -- lspsaga settings
