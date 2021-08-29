@@ -7,8 +7,10 @@
     repo: https://github.com/hrsh7th/nvim-compe 
 
     keybindings are defined in `keymapping.lua`
-
+    
     this file can be loaded by calling `require("module_name")` from your init.lua
+
+    this module using global functions global/_nvim-compe
 --]]
 
 local o = vim.o -- global options
