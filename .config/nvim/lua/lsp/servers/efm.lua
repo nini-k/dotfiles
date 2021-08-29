@@ -25,13 +25,14 @@ local languages = {
     scss               = {formatter},
     css                = {formatter},
     markdown           = {formatter},
-    vue                = {formatter, linter},
     javascript         = {formatter, linter},
     typescript         = {formatter, linter},
     typescriptreact    = {formatter, linter},
     javascriptreact    = {formatter, linter},
     ["javascript.jsx"] = {formatter, linter},
     ["typescript.tsx"] = {formatter, linter},
+
+    -- vue                = {formatter, linter},
 }
 
 return function(language_server_path)
