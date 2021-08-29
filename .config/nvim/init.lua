@@ -16,6 +16,7 @@ require "paq"{
     -- lsp
     "neovim/nvim-lspconfig";
     "nvim-lua/lsp-status.nvim"; 
+    "glepnir/lspsaga.nvim"; 
 
     -- syntax
     "hrsh7th/nvim-compe"; -- autocomplete
@@ -49,6 +50,7 @@ require("settings")   -- settings
 
 -- plugins 
 require("plugins/_lualine")    -- lualine settings
+require("plugins/_lspsaga")    -- lspsaga settings
 require("plugins/_telescope")  -- telescope settings
 require("plugins/_nvim-tree")  -- nvim-tree settings
 require("plugins/_nvim-compe") -- nvim-compe settings

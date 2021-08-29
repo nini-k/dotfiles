@@ -19,27 +19,53 @@ function M.set(cap, bufnr)
 
     local opts = { noremap=true, silent=true } -- noremap mappings opts
     
-    -- see `:help vim.lsp.*` for documentation on any of the below functions
-    buf_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-    buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-    buf_set_keymap("n", "<leader>H", "<Cmd>lua vim.lsp.buf.hover()<cr>", opts)
-    buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
 
     -- TODO some configurations
-    -- buf_set_keymap('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    -- buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    -- buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-    -- buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    -- buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    -- buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    -- buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    -- buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-    -- buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    -- buf_set_keymap('n', '<S-C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+    -- see `:help vim.lsp.*` for documentation on any of the below functions
+    -- buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+    -- buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+    -- buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+    -- buf_set_keymap("n", "<leader>H", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+    -- buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+    -- buf_set_keymap("i", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    -- buf_set_keymap("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+    -- buf_set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+    -- buf_set_keymap("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+    -- buf_set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+    -- buf_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    -- buf_set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+    -- buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    -- buf_set_keymap("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
+    -- buf_set_keymap("n", "<C-j>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+    -- buf_set_keymap("n", "<S-C-j>", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+    -- buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
     -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    
+
+    -- hover help 
+    buf_set_keymap("n", "<leader>H", ":Lspsaga hover_doc<cr>", opts)
+    buf_set_keymap("n", "<leader>Hs", ":Lspsaga signature_help<cr>", opts)
+    -- buf_set_keymap("n", "<leader>H", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+    -- buf_set_keymap("n", "<leade>Hs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+
+    -- find references
+    buf_set_keymap("n", "<leader>ff", ":Lspsaga lsp_finder<cr>", opts)
+
+    -- rename references
+    buf_set_keymap("n", "<leader>rr", ":Lspsaga rename<cr>", opts)
+    -- buf_set_keymap("n", "<leader>rr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+
+    -- go to implementation
+    if cap.implementationProvider then
+        buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+    end
+
+    -- difinition
+    if cap.definitionProvider then 
+        buf_set_keymap("n", "gd", "<cmd>:Lspsaga preview_definition<cr>", opts)
+        buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+        -- buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+    end
+
     -- formatting
     if cap.documentFormattingProvider then
         buf_set_keymap("n","<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
@@ -48,7 +74,6 @@ function M.set(cap, bufnr)
     end
     -- cmd [[autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)]]
     -- cmd [[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-
 end
 
 return M
