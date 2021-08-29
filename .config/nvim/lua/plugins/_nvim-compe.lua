@@ -10,7 +10,7 @@
     
     this file can be loaded by calling `require("module_name")` from your init.lua
 
-    this module using global functions global/_nvim-compe
+    this module using global functions `global/_nvim-compe`
 --]]
 
 local o = vim.o -- global options
