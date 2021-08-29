@@ -13,7 +13,7 @@
 
 local prettier  = {
   formatStdin   = true,
-  formatCommand = "prettier_d_slim --stdin --stdin-filepath ${INPUT}"
+  formatCommand = "prettier_d_slim --print-width 180 --stdin --stdin-filepath  ${INPUT}"
 }
 
 return prettier
