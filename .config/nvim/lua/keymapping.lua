@@ -43,7 +43,7 @@ map("n", "<leader>c", ":nohl<cr>", opts) -- bind nohl
 map("v", "<leader>c", ":nohl<cr>", opts) -- removes highlight of your last search
 map("i", "<leader>c", ":nohl<cr>", opts) --
 
-map("v", "<leader>s", ":sort<cr>", opts) -- map sort function to a key
+-- map("v", "<leader>s", ":sort<cr>", opts) -- map sort function to a key
 
 map("v", "<", "<gv", opts)  -- easier moving of code blocks. try to go into visual mode (v), thenselect several lines of code here and
 map("v", ">", ">gv", opts)  -- then press ``>`` several times 
@@ -59,7 +59,7 @@ map("", "<left>", "<nop>", opts)  --
 map("", "<right>", "<nop>", opts) --
 
 -- telescope
-map("", "<leader>f", "<cmd>Telescope find_files<cr>", opts) -- 
+map("", "<leader>s", "<cmd>Telescope find_files<cr>", opts) -- 
 map("", ";;", "<cmd>Telescope help_tags<cr>", opts)  	    --
 map("", "\\\\", "<cmd>Telescope buffers<cr>", opts)  	    --
 map("", ";r", "<cmd>Telescope live_grep<cr>", opts)  	    --
