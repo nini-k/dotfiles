@@ -15,6 +15,8 @@ function M.set(cap, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end	
 
+    local function test_buf_set_keymap(...) bufnoremap(bufnr, ...) end
+
     local opts = { noremap=true, silent=true } -- noremap mappings opts
     
     -- see `:help vim.lsp.*` for documentation on any of the below functions
@@ -39,9 +41,14 @@ function M.set(cap, bufnr)
     -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     
     -- formatting
-    cmd [[autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)]]
-    cmd [[autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 1000)]] 
-    cmd [[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+    if cap.documentFormattingProvider then
+        buf_set_keymap('n','<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    elseif cap.documentRangeFormattingProvider then
+        buf_set_keymap('n','<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    end
+    -- cmd [[autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+    -- cmd [[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)]]
+
 end
 
 return M
