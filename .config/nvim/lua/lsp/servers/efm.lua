@@ -40,7 +40,7 @@ return function(language_server_path)
     return {
         cmd          = { bin_path, "-loglevel", "10", "-logfile", "/tmp/efm.log"},
         filetypes    = vim.tbl_keys(languages),
-        init_options = {documentFormatting = true},
+        init_options = {documentFormatting = true, codeAction = true},
         settings     = { languages = languages, rootMarkers = { "package.json", ".eslintrc.json", ".git" }, lintDebounce = 500 },
         -- root_dir     = function(fname)
         --     local cwd = lsp.util.root_pattern("tsconfig.json")(fname) or
