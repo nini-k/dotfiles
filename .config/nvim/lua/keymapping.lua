@@ -76,3 +76,6 @@ map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true}) --
 -- vim-fugitive 
 map("n", "<leader>gc", "<cmd>Git add % | Git commit<cr>", opts) -- commit current file
 map("n", "<leader>gr", "<cmd>Git checkout HEAD -- %<cr>", opts) -- rollback current chachges
+
+-- lasy git 
+map("n", "<leader>lz", ":LazyGit<cr>", opts)
