@@ -42,9 +42,9 @@ function M.set(cap, bufnr)
     
     -- formatting
     if cap.documentFormattingProvider then
-        buf_set_keymap('n','<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+        buf_set_keymap("n","<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     elseif cap.documentRangeFormattingProvider then
-        buf_set_keymap('n','<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+        buf_set_keymap("n","<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
     end
     -- cmd [[autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)]]
     -- cmd [[autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 1000)]]
