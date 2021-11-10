@@ -8,7 +8,6 @@
 --]]    
 
 local lsp         = require("lspconfig")
-local lsp_status  = require("lsp-status")
 local keymapping  = require("lsp.keymapping")
 
 -- for debugging lsp
@@ -17,7 +16,6 @@ vim.lsp.set_log_level("warn") -- levels by name: "trace", "debug", "info", "warn
 local function on_attach(client, bufnr)
     print(client.name)
     keymapping.set(client.server_capabilities, bufnr)
-    lsp_status.on_attach(client, bufnr)
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -33,9 +31,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
-lsp_status.register_progress()
-
-local default_lsp_config   = {on_attach = on_attach, capabilities = lsp_status.capabilities}
+local default_lsp_config   = {on_attach = on_attach}
 local language_server_path = "/usr/local/bin" -- vim.fn.stdpath("cache") .. "/lspconfig"
 
 local servers = {

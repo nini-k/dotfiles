@@ -15,7 +15,6 @@ require "paq"{
     
     -- lsp
     "neovim/nvim-lspconfig";
-    "nvim-lua/lsp-status.nvim"; 
     "glepnir/lspsaga.nvim"; 
 
     -- syntax
