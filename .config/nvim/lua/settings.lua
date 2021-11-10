@@ -7,7 +7,6 @@
     this file can be loaded by calling `require("module_name")` from your init.lua
 --]]
 
-
 local g    = vim.g         	   -- global variables
 local o    = vim.o         	   -- global options
 local b    = vim.bo        	   -- buffer-scoped options
@@ -38,7 +37,7 @@ o.syntax     = "enable" -- enable syntax highlighting
 w.number     = true     -- show line number
 o.showmatch  = true     -- highlight matching parenthesis
 o.smartcase  = true     -- ignore lowercase for the whole pattern
-w.foldmethod = "syntax" -- enable folding (default "foldmarker")
+w.foldmethod = "indent" -- enable folding (default "foldmarker")
 o.splitright = true     -- vertical split to the right
 o.splitbelow = true     -- orizontal split to the bottom
 o.ignorecase = true     -- ignore case letters when search

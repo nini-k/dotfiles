@@ -7,7 +7,6 @@
     this file can be loaded by calling `require("module_name")` from your init.lua
 --]]
 
-
 local map = vim.api.nvim_set_keymap -- set global keymap
 local g   = vim.g         			-- global variables
 
