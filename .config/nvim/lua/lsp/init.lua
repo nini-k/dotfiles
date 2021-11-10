@@ -41,7 +41,7 @@ local language_server_path = "/usr/local/bin" -- vim.fn.stdpath("cache") .. "/ls
 local servers = {
     efm      = require("lsp.servers.efm")(language_server_path),
     html     = require("lsp.servers.html")(language_server_path),
-    vuels    = require("lsp.servers.vuels")(language_server_path, on_attach),
+    gopls    = require("lsp.servers.gopls")(language_server_path, on_attach),
     bashls   = require("lsp.servers.bashls")(language_server_path),
     yamlls   = require("lsp.servers.yamlls")(language_server_path),
     dockerls = require("lsp.servers.dockerls")(language_server_path),
@@ -50,6 +50,7 @@ local servers = {
     -- jsonls = require("lsp.servers.jsonls")(language_server_path),
     -- cssls = require("lsp.servers.cssls")(language_server_path),
     -- sumneko_lua = require("lsp.servers.sumneko_lua")(language_server_path),
+    -- vuels = require("lsp.servers.vuels")(language_server_path, on_attach),
 }
 
 -- init servers
