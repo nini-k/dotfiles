@@ -21,7 +21,7 @@ return function(language_server_path)
                 analyses = {
                     unusedparams = true,
                 },
-            staticcheck = true,
+                staticcheck = true,
             },
         },
     }
