@@ -15,7 +15,7 @@ return function(language_server_path)
     local bin_path = language_server_path .. "/gopls"
     return {
         cmd       = {bin_path, "serve"},
-        filetypes = {"go"}
+        filetypes = {"go"},
         settings  = {
             gopls = {
                 analyses = {
