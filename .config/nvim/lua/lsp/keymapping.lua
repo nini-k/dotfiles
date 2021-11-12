@@ -42,8 +42,8 @@ function M.set(cap, bufnr)
     -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
     -- hover help 
-    buf_set_keymap("n", "<leader>H", ":Lspsaga hover_doc<cr>", opts)
-    buf_set_keymap("n", "<leader>Hs", ":Lspsaga signature_help<cr>", opts)
+    buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+    buf_set_keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
     -- buf_set_keymap("n", "<leader>H", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
     -- buf_set_keymap("n", "<leade>Hs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 
